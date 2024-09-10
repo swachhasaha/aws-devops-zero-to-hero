@@ -3,4 +3,8 @@ set -e
 
 # Stop the running container (if any)
 containerid = `docker ps |awk -F " "  '{print $1}' `
-docker stop $containerid
+if[$containerid==null];then
+  echo "okk"
+else
+  docker stop $containerid
+fi
